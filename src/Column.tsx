@@ -4,7 +4,7 @@ import { AddNewItem } from "./AddNewItem";
 import { Card } from "./Card";
 import { useAppState } from "./state/AppStateContext";
 import { addTask, moveList } from "./state/actions";
-import { useItemDrag } from "./useItemDrag";
+import { useItemDrag } from "./utils/useItemDrag";
 import { useDrop } from "react-dnd";
 import { throttle } from "throttle-debounce-ts";
 import { isHidden } from "./utils/isHidden";
@@ -45,7 +45,7 @@ export const Column = ({ text, id, isPreview }: ColumnProps) => {
     >
       <ColumnTitle>{text}</ColumnTitle>
       {tasks.map((task) => (
-        <Card text={task.text} key={task.id} id={task.id} />
+        <Card text={task.text} key={task.id} id={task.id} columnId={id} />
       ))}
 
       <AddNewItem
