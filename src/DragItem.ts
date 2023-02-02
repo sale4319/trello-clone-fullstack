@@ -11,4 +11,5 @@ export type ColumnDragItem = {
   type: "COLUMN";
 };
 
+
 export type DragItem = CardDragItem | ColumnDragItem;

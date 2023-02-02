@@ -7,6 +7,7 @@ import { isHidden } from "./utils/isHidden";
 import { moveTask, setDraggedItem } from "./state/actions";
 import { throttle } from "throttle-debounce-ts";
 
+
 type CardProps = {
   text: string;
   id: string;
@@ -47,9 +48,9 @@ export const Card = ({ text, id, columnId, isPreview }: CardProps) => {
 
   return (
     <CardContainer
-      isHidden={isHidden(draggedItem, "CARD", id, isPreview)}
-      isPreview={isPreview}
       ref={ref}
+      isPreview={isPreview}
+      isHidden={isHidden(draggedItem, "CARD", id, isPreview)}
     >
       {text}
     </CardContainer>

@@ -10,10 +10,12 @@ export const AppContainer = styled.div`
   width: 100%;
 `;
 
+
 export const ColumnTitle = styled.div`
   padding: 6px 16px 12px;
   font-weight: bold;
 `;
+
 
 type AddItemButtonProps = {
   dark?: boolean;

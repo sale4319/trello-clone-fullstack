@@ -8,6 +8,7 @@ import { useItemDrag } from "./utils/useItemDrag";
 import { useDrop } from "react-dnd";
 import { addTask, moveTask, moveList, setDraggedItem } from "./state/actions";
 import { throttle } from "throttle-debounce-ts";
+import { isHidden } from "./utils/isHidden";
 
 type ColumnProps = {
   text: string;
@@ -57,7 +58,7 @@ export const Column = ({ text, id, isPreview }: ColumnProps) => {
     >
       <ColumnTitle>{text}</ColumnTitle>
       {tasks.map((task) => (
-        <Card columnId={id} text={task.text} key={task.id} id={task.id} />
+        <Card text={task.text} key={task.id} id={task.id} columnId={id} />
       ))}
       <AddNewItem
         toggleButtonText="+ Add another card"
