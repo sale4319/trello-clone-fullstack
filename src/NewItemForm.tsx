@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NewItemButton, NewItemFormContainer, NewItemInput } from "./styles";
+import { useState } from "react";
+import { NewItemFormContainer, NewItemButton, NewItemInput } from "./styles";
 import { useFocus } from "./utils/useFocus";
 
 type NewItemFormProps = {
