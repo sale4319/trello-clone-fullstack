@@ -1,11 +1,11 @@
-import { AddNewItem } from "./AddNewItem";
-import { Column } from "./Column";
 import { AppContainer } from "./styles";
+import { CustomDragLayer } from "./CustomDragLayer";
+import { Column } from "./Column";
+import { AddNewItem } from "./AddNewItem";
 import { useAppState } from "./state/AppStateContext";
 import { addList } from "./state/actions";
-import { CustomDragLayer } from "./CustomDragLayer";
 
-export function App() {
+export const App = () => {
   const { lists, dispatch } = useAppState();
 
   return (
@@ -15,9 +15,9 @@ export function App() {
         <Column text={list.text} key={list.id} id={list.id} />
       ))}
       <AddNewItem
-        toggleButtonText="+ Add new list"
+        toggleButtonText="+ Add another list"
         onAdd={(text) => dispatch(addList(text))}
       />
     </AppContainer>
   );
-}
+};

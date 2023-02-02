@@ -1,12 +1,12 @@
 import { useRef } from "react";
-import { useDrop } from "react-dnd";
-import { throttle } from "throttle-debounce-ts";
-import { moveTask, setDraggedItem } from "./state/actions";
-
-import { useAppState } from "./state/AppStateContext";
 import { CardContainer } from "./styles";
 import { useItemDrag } from "./utils/useItemDrag";
+import { useDrop } from "react-dnd";
+import { useAppState } from "./state/AppStateContext";
 import { isHidden } from "./utils/isHidden";
+import { moveTask, setDraggedItem } from "./state/actions";
+import { throttle } from "throttle-debounce-ts";
+
 
 type CardProps = {
   text: string;
@@ -38,6 +38,7 @@ export const Card = ({ text, id, columnId, isPreview }: CardProps) => {
       if (draggedItem.id === id) {
         return;
       }
+
       dispatch(moveTask(draggedItem.id, id, draggedItem.columnId, columnId));
       dispatch(setDraggedItem({ ...draggedItem, columnId }));
     }),
