@@ -8,7 +8,6 @@ import { useItemDrag } from "./utils/useItemDrag";
 import { useDrop } from "react-dnd";
 import { addTask, moveTask, moveList, setDraggedItem } from "./state/actions";
 import { throttle } from "throttle-debounce-ts";
-import { isHidden } from "./utils/isHidden";
 
 type ColumnProps = {
   text: string;
